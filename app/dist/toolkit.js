@@ -2341,39 +2341,6 @@ var rsvpLink = document.getElementsByClassName('js-rsvpLink')[0]
 var notification = document.getElementsByClassName('js-notification')[0]
 var rsvpContainer = document.getElementsByClassName('js-rsvpContainer')[0]
 var isMobile = navigator.userAgent.indexOf('Mobile') > 0
-var videosList = [
-  '1',
-  '2',
-  '3',
-  '4',
-  '5',
-  '6',
-  '7',
-  '8',
-  '9',
-  '10',
-  '11'
-]
-
-if (!isMobile) {
-  videoPlayer.addEventListener('ended', function () {
-    this.pause()
-
-    var videoToPlay = videosList[Math.floor(Math.random() * videosList.length)]
-    document.querySelector('#mp4').setAttribute('src', 'assets/vid/' + videoToPlay + '.mp4')
-
-    this.load()
-    this.play()
-
-  }, false)
-
-  videoPlayer.play()
-} else {
-  setInterval(function () {
-    var gifToPlay = videosList[Math.floor(Math.random() * videosList.length)]
-    gifPlayer.setAttribute('src', 'assets/img/' + gifToPlay + '.gif')
-  }, 5000)
-}
 
 rsvpLink.addEventListener('click', function (e) {
   var email = document.getElementsByClassName('js-rsvpEmail')[0]

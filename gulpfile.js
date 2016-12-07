@@ -10,6 +10,8 @@ var uglify          = require('gulp-uglify')
 var connect         = require('gulp-connect')
 var open            = require('gulp-open')
 var nunjucksRender  = require('gulp-nunjucks-render')
+var nunjucks        = require('gulp-nunjucks-html')
+var browserSync     = require('browser-sync').create()
 
 gulp.task('default', ['less-min', 'js-min'])
 
@@ -18,12 +20,15 @@ gulp.task('docs', ['server'], function () {
     .pipe(open({uri: 'http://localhost:9001/docs/'}))
 })
 
-gulp.task('server', function () {
-  connect.server({
-    root: 'app',
-    port: 9001,
-    livereload: true
+gulp.task('server', ['less', 'nunjucks', 'js'], function () {
+  browserSync.init({
+    server: 'app'
   })
+
+  gulp.watch('app/pages/*.nunjucks', ['nunjucks'])
+  gulp.watch('less/*.less', ['less'])
+  gulp.watch('js/custom/*.js', ['js'])
+  gulp.watch('app/*.html').on('change', browserSync.reload)
 })
 
 gulp.task('less', function () {
