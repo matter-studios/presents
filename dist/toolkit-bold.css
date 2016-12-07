@@ -8948,9 +8948,12 @@ h1.block-title {
     height: 155px;
     left: 10px;
   }
+  .primary-link--email {
+    font-size: 60px;
+  }
   .right-rail-xs {
     position: absolute;
-    right: 0;
+    right: -30px;
     bottom: 43px;
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
@@ -8972,7 +8975,7 @@ h1.block-title {
   }
   .right-rail-xs.is-selected {
     right: -160px;
-    bottom: 214px;
+    bottom: 180px;
   }
   .block-fill-height {
     height: 100vh;
