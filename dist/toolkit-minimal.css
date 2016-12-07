@@ -8829,26 +8829,33 @@ img.zoom-img {
   right: 20px;
 }
 .matter-logo {
-  background-image: url(../assets/img/matterlogo_rgb.svg);
-  width: 700px;
-  height: 294px;
+  background-image: url(../assets/img/matterlogo_white.svg);
+  width: 300px;
+  height: 194px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 108%;
-  position: absolute;
   top: 0;
   left: 20px;
   z-index: 100;
 }
 .right-rail {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .right-rail-xs {
   position: absolute;
   bottom: 0;
 }
+.meta-speakers {
+  float: right;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  text-align: right;
+}
 .notification-text {
-  color: #f0f;
+  color: #fff;
   font-size: 26px;
 }
 .container {
@@ -8863,7 +8870,7 @@ img.zoom-img {
   height: 100vh;
 }
 .video-container {
-  position: relative;
+  position: absolute;
   bottom: 0%;
   left: 0%;
   height: 100%;
@@ -8876,9 +8883,12 @@ img.zoom-img {
   position: absolute;
   bottom: 0;
 }
+.block-title {
+  color: #fff;
+}
 h2.block-title {
-  padding-top: 200px;
-  font-size: 70px;
+  padding-right: 25px;
+  font-size: 90px;
 }
 h1.block-title {
   font-size: 260px;
@@ -8886,46 +8896,23 @@ h1.block-title {
   line-height: 0.8em;
 }
 .primary-link {
-  font-size: 60px;
+  font-size: 90px;
   text-transform: uppercase;
-  color: #f0f;
+  color: #fff;
 }
 .primary-link:hover {
-  color: #f0f;
+  color: #fff;
 }
 .meta-info {
-  color: #f0f;
-  font-size: 16px;
+  color: #fff;
+  font-size: 32px;
   vertical-align: bottom;
   line-height: 1.1em;
-}
-.meta-speakers {
-  list-style-type: none;
-  color: #f0f;
-  font-size: 28px;
-  vertical-align: bottom;
-  line-height: 1.2em;
 }
 .meta {
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-.sold-out {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  position: absolute;
-  z-index: 9;
-  opacity: 0.97;
-  width: 100%;
-  height: 100%;
-}
-.sold-out.hidden-xs {
-  background-image: url(../assets/img/sold_outDesktop.png);
-}
-.sold-out.hidden-lg {
-  background-image: url(../assets/img/sold_outMobile.png);
 }
 /*
  * Mobile styles
@@ -8937,44 +8924,21 @@ h1.block-title {
     -moz-transform: rotate(270deg) scale 2;
     -ms-transform: rotate(270deg) scale 2;
   }
+  .right-rail-xs {
+    bottom: 0;
+    right: 0;
+  }
   h1.block-title {
     font-size: 190px;
     margin-top: -200px;
   }
 }
 @media screen and (min-width: 1023px) and (max-width: 1400px) {
-  .video-content {
-    height: 100vh;
-    -webkit-transform: scale(1.4);
-    -moz-transform: scale 1.4;
-    -ms-transform: scale 1.4;
-  }
   h1.block-title {
     font-size: 205px;
   }
 }
 @media (max-width: 767px) {
-  .video-content {
-    -webkit-transform: rotate(270deg) scale(1.2);
-    -moz-transform: rotate(270deg) scale 1.2;
-    -ms-transform: rotate(270deg) scale 1.2;
-    -webkit-transform-origin: top top;
-    -moz-transform-origin: top top;
-    -ms-transform-origin: top top;
-    width: 100vh;
-    height: 100vh;
-    left: -150px;
-    top: 0;
-  }
-  .gif-bg {
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    width: 150vh;
-    height: 100vh;
-    left: -180px;
-    top: 0;
-  }
   h1.block-title {
     font-size: 100px;
     line-height: 0.9em;
@@ -8989,45 +8953,34 @@ h1.block-title {
     height: 155px;
     left: 10px;
   }
-  .meta {
-    position: static;
-  }
-  .meta-info {
-    margin: 0;
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-  }
   .right-rail-xs {
     position: absolute;
     right: 0;
-    bottom: 40px;
+    bottom: 43px;
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
+  }
+  .right-rail-xs h3 {
+    margin: 0;
+  }
+  .meta-speakers-xs {
+    font-size: 20px;
+  }
+  .meta-info {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+  .left-rail-xs {
+    top: 37px;
+    left: 25px;
   }
   .right-rail-xs.is-selected {
     right: -160px;
     bottom: 214px;
   }
   .block-fill-height {
-    height: 95vh;
-  }
-}
-@media (max-width: 768px) and (orientation: landscape) {
-  .video-content {
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    width: 100%;
     height: 100vh;
-    left: 0;
-    top: 0;
-  }
-}
-@media (max-width: 414px) and (min-width: 376px) and (orientation: portrait) {
-  .video-content {
-    width: 100vh;
   }
 }
 @media (max-width: 320px) {
@@ -9036,9 +8989,6 @@ h1.block-title {
   }
   .matter-logo {
     width: 280px;
-  }
-  .video-content {
-    width: 110vh;
   }
 }
 h1.text-uppercase,
